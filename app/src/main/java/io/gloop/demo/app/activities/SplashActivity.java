@@ -30,9 +30,10 @@ public class SplashActivity extends Activity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        // TODO add cet for testing
+
         // setup Gloop
-//        new Gloop(this, "your-api-key-goes-here", "192.168.0.12:8080");
-        new Gloop(this, "your-api-key-goes-here", "192.168.32.181:8080");
+        new Gloop(this, "your-api-key-goes-here", "192.168.0.3:8080");
 
         /* New Handler to start the next Activity
          * and close this SplashActivity-Screen after some seconds.*/

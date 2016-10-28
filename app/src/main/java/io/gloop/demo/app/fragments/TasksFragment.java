@@ -2,7 +2,6 @@ package io.gloop.demo.app.fragments;
 
 import android.app.Activity;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -27,8 +26,6 @@ import io.gloop.demo.app.R;
 import io.gloop.demo.app.adapters.TasksAdapter;
 import io.gloop.demo.app.model.Task;
 import io.gloop.permissions.GloopGroup;
-
-import static android.app.Activity.RESULT_OK;
 
 public class TasksFragment extends Fragment {
 
@@ -236,16 +233,16 @@ public class TasksFragment extends Fragment {
             }
         });
     }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 0) {
-            if (resultCode == RESULT_OK) {
-                String contents = data.getStringExtra("SCAN_RESULT");
-                userIds.add(contents);
-                userAdapter.notifyDataSetChanged();
-            }
-        }
-    }
+//
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == 0) {
+//            if (resultCode == RESULT_OK) {
+//                String contents = data.getStringExtra("SCAN_RESULT");
+//                userIds.add(contents);
+//                userAdapter.notifyDataSetChanged();
+//            }
+//        }
+//    }
 }

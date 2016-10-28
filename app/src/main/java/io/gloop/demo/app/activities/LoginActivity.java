@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == R.id.login || id == EditorInfo.IME_NULL) {
-                    attemptLogin();
+                    login();
                     return true;
                 }
                 return false;
@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         signInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+                login();
             }
         });
 
@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptRegister();
+                register();
             }
         });
 
@@ -70,7 +70,16 @@ public class LoginActivity extends AppCompatActivity {
         mProgressView = findViewById(R.id.login_progress);
     }
 
-    private void attemptLogin() {
+
+    private void login() {
+        attempt(false);
+    }
+
+    private void register() {
+        attempt(true);
+    }
+
+    private void attempt(boolean isRegister) {
         // Reset errors.
         mEmailView.setError(null);
         mPasswordView.setError(null);
@@ -109,86 +118,49 @@ public class LoginActivity extends AppCompatActivity {
             // perform the user login attempt.
             showProgress(true);
 
-            // Login using Gloop
-            if (Gloop.login(email, password)) {
-                // keep user logged in
-                SharedPreferences pref = getApplicationContext().getSharedPreferences(Constants.SHARED_PREFERENCES_NAME, 0); // 0 - for private mode
-                SharedPreferences.Editor editor = pref.edit();
-                editor.putString(Constants.SHARED_PREFERENCES_USER_EMAIL, email);
-                editor.putString(Constants.SHARED_PREFERENCES_USER_PASSWORD, password);
-                editor.apply();
+            if (isRegister) {
+                // Register user using gloop
+                if (Gloop.register(email, password)) {
 
-                showProgress(false);
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences(Constants.SHARED_PREFERENCES_NAME, 0); // 0 - for private mode
+                    SharedPreferences.Editor editor = pref.edit();
+                    editor.putString(Constants.SHARED_PREFERENCES_USER_EMAIL, email);
+                    editor.putString(Constants.SHARED_PREFERENCES_USER_PASSWORD, password);
+                    editor.apply();
 
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(i);
-                finish();
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(i);
+                    finish();
+                }
             } else {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
-                mPasswordView.requestFocus();
-                showProgress(false);
+                // Login using Gloop
+                if (Gloop.login(email, password)) {
+                    // keep user logged in
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences(Constants.SHARED_PREFERENCES_NAME, 0); // 0 - for private mode
+                    SharedPreferences.Editor editor = pref.edit();
+                    editor.putString(Constants.SHARED_PREFERENCES_USER_EMAIL, email);
+                    editor.putString(Constants.SHARED_PREFERENCES_USER_PASSWORD, password);
+                    editor.apply();
+
+                    showProgress(false);
+
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(i);
+                    finish();
+                } else {
+                    mPasswordView.setError(getString(R.string.error_incorrect_password));
+                    mPasswordView.requestFocus();
+                    showProgress(false);
+                }
             }
         }
     }
 
-    private void attemptRegister() {
-
-        // Store values at the time of the login attempt.
-        String email = mEmailView.getText().toString();
-        String password = mPasswordView.getText().toString();
-
-        boolean cancel = false;
-        View focusView = null;
-
-        // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            mPasswordView.setError(getString(R.string.error_invalid_password));
-            focusView = mPasswordView;
-            cancel = true;
-        }
-
-        // Check for a valid email address.
-        if (TextUtils.isEmpty(email)) {
-            mEmailView.setError(getString(R.string.error_field_required));
-            focusView = mEmailView;
-            cancel = true;
-        } else if (!isEmailValid(email)) {
-            mEmailView.setError(getString(R.string.error_invalid_email));
-            focusView = mEmailView;
-            cancel = true;
-        }
-
-        if (cancel) {
-            // There was an error; don't attempt login and focus the first
-            // form field with an error.
-            focusView.requestFocus();
-        } else {
-            // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
-            showProgress(true);
-
-            // Register user using gloop
-            Gloop.register(email, password);
-
-            SharedPreferences pref = getApplicationContext().getSharedPreferences(Constants.SHARED_PREFERENCES_NAME, 0); // 0 - for private mode
-            SharedPreferences.Editor editor = pref.edit();
-            editor.putString(Constants.SHARED_PREFERENCES_USER_EMAIL, email);
-            editor.putString(Constants.SHARED_PREFERENCES_USER_PASSWORD, password);
-            editor.apply();
-
-            Intent i = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(i);
-            finish();
-        }
-    }
-
     private boolean isEmailValid(String email) {
-        //TODO: Replace this with your own logic
         return email.contains("@");
     }
 
     private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
         return password.length() > 4;
     }
 
