@@ -17,10 +17,6 @@ import io.gloop.demo.app.R;
 import io.gloop.demo.app.constants.Constants;
 import io.gloop.demo.app.fragments.GroupsFragment;
 import io.gloop.demo.app.fragments.TasksFragment;
-import io.gloop.demo.app.model.Task;
-import io.gloop.permissions.GloopACL;
-import io.gloop.permissions.GloopGroup;
-import io.gloop.permissions.GloopUser;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -118,11 +114,7 @@ public class MainActivity extends AppCompatActivity
         editor.clear();
         editor.apply();
 
-        // TODO impl logout in core
-        Gloop.all(Task.class).clear();
-        Gloop.all(GloopUser.class).clear();
-        Gloop.all(GloopGroup.class).clear();
-        Gloop.all(GloopACL.class).clear();
+        Gloop.logout();
 
         // close app
         finish();

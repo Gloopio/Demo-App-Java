@@ -13,6 +13,8 @@ import io.gloop.demo.app.constants.Constants;
 
 public class SplashActivity extends Activity {
 
+    private static final String HOST_URL = "192.168.0.3:8080";
+
     /**
      * Duration of wait
      **/
@@ -33,7 +35,7 @@ public class SplashActivity extends Activity {
         // TODO add cet for testing
 
         // setup Gloop
-        new Gloop(this, "your-api-key-goes-here", "192.168.0.3:8080");
+        new Gloop(this, "your-api-key-goes-here", HOST_URL);
 
         /* New Handler to start the next Activity
          * and close this SplashActivity-Screen after some seconds.*/
