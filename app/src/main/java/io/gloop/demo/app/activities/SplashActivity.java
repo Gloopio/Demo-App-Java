@@ -13,7 +13,8 @@ import io.gloop.demo.app.constants.Constants;
 
 public class SplashActivity extends Activity {
 
-    private static final String HOST_URL = "192.168.0.3:8080";
+    // Set url of the server.
+    private static final String HOST_URL = "192.168.0.10:8080";
 
     /**
      * Duration of wait

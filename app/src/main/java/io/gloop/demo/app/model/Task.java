@@ -5,7 +5,6 @@ import io.gloop.GloopObject;
 /**
  * Created by Alex Untertrifaller on 21.10.16.
  */
-
 public class Task extends GloopObject {
 
     private String description;

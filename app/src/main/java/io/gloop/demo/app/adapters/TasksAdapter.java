@@ -12,7 +12,6 @@ import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
 
 import io.gloop.GloopList;
-import io.gloop.GloopLogger;
 import io.gloop.GloopOnChangeListener;
 import io.gloop.demo.app.R;
 import io.gloop.demo.app.model.Task;
@@ -45,7 +44,6 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ItemViewHold
 
             @Override
             public void onChange() {
-                GloopLogger.d("onChange called.");
                 notifyDataSetChanged();
             }
         });

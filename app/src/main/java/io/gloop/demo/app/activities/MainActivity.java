@@ -18,8 +18,7 @@ import io.gloop.demo.app.constants.Constants;
 import io.gloop.demo.app.fragments.GroupsFragment;
 import io.gloop.demo.app.fragments.TasksFragment;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
