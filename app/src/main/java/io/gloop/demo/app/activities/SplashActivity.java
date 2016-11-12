@@ -14,7 +14,10 @@ import io.gloop.demo.app.constants.Constants;
 public class SplashActivity extends Activity {
 
     // Set url of the server.
-    private static final String HOST_URL = "192.168.0.10:8080";
+//    private static final String HOST_URL = "192.168.0.10:8080";
+    private static final String HOST_URL = "52.169.152.13:8080";
+
+    private static final boolean DEBUG = true;
 
     /**
      * Duration of wait
@@ -33,10 +36,11 @@ public class SplashActivity extends Activity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-        // TODO add cet for testing
-
         // setup Gloop
         new Gloop(this, "your-api-key-goes-here", HOST_URL);
+
+        // setup Gloop with debugging enabled
+        // new Gloop(this, "your-api-key-goes-here", HOST_URL, DEBUG);
 
         /* New Handler to start the next Activity
          * and close this SplashActivity-Screen after some seconds.*/
@@ -58,7 +62,7 @@ public class SplashActivity extends Activity {
         String email = pref.getString(Constants.SHARED_PREFERENCES_USER_EMAIL, "");
         String password = pref.getString(Constants.SHARED_PREFERENCES_USER_PASSWORD, "");
 
-        if (!email.equals("") && !password.equals("")) {
+        if (!email.isEmpty() && !password.isEmpty()) {
             if (Gloop.login(email, password)) {
                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(i);

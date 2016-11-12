@@ -8,7 +8,14 @@
     <color name="colorPrimaryDark">#336cf4</color>
     <color name="colorAccent">#0098f4</color>
 
-    <color name="background">#0098f4</color>
+    <color name="background_splash_screen">#0098f4</color>
+    <color name="background">#ffff</color>
+    <color name="text_color">#0098f4</color>
+
+
+    <color name="button_background">#0098f4</color>
+    <color name="button_text_color">#fff</color>
+
     <color name="grey_500">#9E9E9E</color>
 
     <color name="white">#ffff</color>
