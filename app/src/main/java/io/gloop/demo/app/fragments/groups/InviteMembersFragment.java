@@ -4,14 +4,17 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import io.gloop.demo.app.R;
 import io.gloop.demo.app.constants.Constants;
+import io.gloop.demo.app.fragments.GroupsFragment;
 import io.gloop.permissions.GloopGroup;
 
 public class InviteMembersFragment extends Fragment {
@@ -45,7 +48,19 @@ public class InviteMembersFragment extends Fragment {
 
         newGroupName.setText(newGroup.getName());
 
-        // TODO fill the new group with members.
+        // TODO add members to newGroup.
+
+        Button nextButton = (Button) view.findViewById(R.id.new_group_invite_bt_next);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                newGroup.save();
+
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                Fragment fragment = new GroupsFragment();
+                fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+            }
+        });
 
         return view;
     }

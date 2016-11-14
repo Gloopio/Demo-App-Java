@@ -29,4 +29,10 @@
     <string name="next">Next</string>
     <string name="blabla">BlaBla</string>
     <string name="gloop">gloop</string>
+    <string name="tasks">Tasks</string>
+    <string name="groups">Groups</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="name">Name</string>
+    <string name="share">Share</string>
 </resources>

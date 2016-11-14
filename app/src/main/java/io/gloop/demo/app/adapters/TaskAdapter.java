@@ -16,7 +16,7 @@ import io.gloop.GloopOnChangeListener;
 import io.gloop.demo.app.R;
 import io.gloop.demo.app.model.Task;
 
-public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ItemViewHolder> {
+public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ItemViewHolder> {
 
     class ItemViewHolder extends RecyclerView.ViewHolder {
         RelativeLayout relativeLayout;
@@ -38,7 +38,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ItemViewHold
 
     private GloopList<Task> taskList;
 
-    public TasksAdapter(GloopList<Task> taskList) {
+    public TaskAdapter(GloopList<Task> taskList) {
         this.taskList = taskList;
         this.taskList.addOnChangeListener(new GloopOnChangeListener() {
 
@@ -50,7 +50,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ItemViewHold
     }
 
     @Override
-    public TasksAdapter.ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TaskAdapter.ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_task, parent, false);
         return new ItemViewHolder(v);
     }
@@ -65,7 +65,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ItemViewHold
         setItemSelected(holder, item.isDone(), firstLetter);
 
         if (item.getOwner() != null )
-            if (item.getOwner().isGroup())
+            if (!item.getOwner().isGroup())
                 holder.privateIcon.setVisibility(View.VISIBLE);
 
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {

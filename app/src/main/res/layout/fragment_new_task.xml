@@ -2,36 +2,44 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:background="@color/flatui_emerald"
-             tools:context="io.gloop.demo.app.fragments.groups.InviteMembersFragment">
+             android:padding="16dp"
+             tools:context="io.gloop.demo.app.fragments.NewTaskFragment">
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_gravity="center">
 
         <EditText
-            android:id="@+id/new_group_et_search"
+            android:id="@+id/new_task_et_name"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="@string/enter_name_for_group"
-            android:background="@color/white"/>
+            android:hint="@string/name"/>
 
-        <android.support.v7.widget.RecyclerView
+        <CheckBox
+            android:id="@+id/new_task_share_checkBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content"
+            android:text="@string/share"/>
+
+        <Spinner
+            android:id="@+id/new_task_group_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/new_group_invite_bt_next"
+            android:id="@+id/new_task_bt_next"
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="40dp"
-            android:background="@color/white"
+            android:paddingTop="16dp"
+            android:background="@color/button_background"
+            android:textColor="@color/button_text_color"
             android:text="@string/next"/>
-
     </LinearLayout>
 </FrameLayout>
