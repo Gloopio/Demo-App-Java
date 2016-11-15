@@ -1,25 +1,49 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:padding="16dp"
-             tools:context="io.gloop.demo.app.fragments.NewTaskFragment">
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:fitsSystemWindows="true">
 
+    <!--<android.support.design.widget.AppBarLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:theme="@style/AppTheme.AppBarOverlay">-->
+
+    <!--<android.support.v7.widget.Toolbar-->
+    <!--android:id="@+id/toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="200dp"-->
+    <!--android:background="?attr/colorPrimary"-->
+    <!--app:popupTheme="@style/AppTheme.PopupOverlay">-->
+
+    <!--<EditText-->
+    <!--android:id="@+id/new_task_et_name"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="40dp"-->
+    <!--android:ems="20"-->
+    <!--android:hint="@string/name"-->
+    <!--android:inputType="textPersonName"/>-->
+
+    <!--</android.support.v7.widget.Toolbar>-->
+
+    <!--</android.support.design.widget.AppBarLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:orientation="vertical"
-        android:gravity="center"
-        android:layout_gravity="center">
+        android:padding="16dp">
 
         <EditText
             android:id="@+id/new_task_et_name"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="@string/name"/>
+            android:hint="@string/name"
+            android:inputType="textPersonName"/>
 
         <CheckBox
             android:id="@+id/new_task_share_checkBox"
@@ -30,16 +54,65 @@
         <Spinner
             android:id="@+id/new_task_group_spinner"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/new_task_bt_next"
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
             android:layout_height="40dp"
-            android:paddingTop="16dp"
             android:background="@color/button_background"
-            android:textColor="@color/button_text_color"
-            android:text="@string/next"/>
+            android:layout_marginTop="16dp"
+            android:text="@string/next"
+            android:textColor="@color/button_text_color"/>
     </LinearLayout>
-</FrameLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+    <!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context="io.gloop.demo.app.fragments.NewTaskFragment">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="vertical"-->
+    <!--android:padding="16dp">-->
+    <!---->
+    <!--<EditText-->
+    <!--android:id="@+id/new_task_et_name"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="40dp"-->
+    <!--android:ems="10"-->
+    <!--android:hint="@string/name"-->
+    <!--android:inputType="textPersonName"/>-->
+
+    <!--<CheckBox-->
+    <!--android:id="@+id/new_task_share_checkBox"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="@string/share"/>-->
+
+    <!--<Spinner-->
+    <!--android:id="@+id/new_task_group_spinner"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"/>-->
+
+    <!--<Button-->
+    <!--android:id="@+id/new_task_bt_next"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="40dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:background="@color/button_background"-->
+    <!--android:paddingTop="16dp"-->
+    <!--android:text="@string/next"-->
+    <!--android:textColor="@color/button_text_color"/>-->
+    <!--</LinearLayout>-->
+    <!--</FrameLayout>-->
+
+

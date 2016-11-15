@@ -11,5 +11,6 @@ public class Constants {
     public static final String SHARED_PREFERENCES_USER_PASSWORD= "user_password";
 
     public static final String BUNDLE_KEY_NEW = "newGroup";
+    public static final String BUNDLE_DETAIL_GROUP = "detailGroup";
 
 }
