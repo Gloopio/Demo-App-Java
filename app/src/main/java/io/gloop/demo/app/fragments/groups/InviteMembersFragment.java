@@ -28,7 +28,7 @@ public class InviteMembersFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
+//        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         if (Build.VERSION.SDK_INT >= 21)
             getActivity().getWindow().setNavigationBarColor(getResources().getColor(R.color.flatui_emerald));
 
