@@ -17,6 +17,9 @@ public class SplashActivity extends Activity {
 //    private static final String HOST_URL = "192.168.0.10:8080";
     private static final String HOST_URL = "52.169.152.13:8080";
 
+//    private static final String API_KEY = "your-api-key-goes-here";
+    private static final String API_KEY = "b8ed4e84-4db5-4b63-b369-f75cbf51a065";
+
     private static final boolean DEBUG = true;
 
     /**
@@ -37,7 +40,7 @@ public class SplashActivity extends Activity {
         super.onPostCreate(savedInstanceState);
 
         // setup Gloop
-        new Gloop(this, "your-api-key-goes-here", HOST_URL);
+        new Gloop(this, API_KEY, HOST_URL);
 
         // setup Gloop with debugging enabled
         // new Gloop(this, "your-api-key-goes-here", HOST_URL, DEBUG);
