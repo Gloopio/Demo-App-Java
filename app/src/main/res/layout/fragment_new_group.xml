@@ -1,33 +1,26 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:background="@color/flatui_alizarin"
-             tools:context="io.gloop.demo.app.fragments.groups.NewGroupFragment">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
 
+    <EditText
+        android:id="@+id/new_group_et_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="@string/enter_name_for_group"
+        android:inputType="textPersonName"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_gravity="center">
-
-        <EditText
-            android:id="@+id/new_group_et_name"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="@string/enter_name_for_group"
-            android:background="@color/white"/>
-
-        <Button
-            android:id="@+id/new_group_bt_next"
-            android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_height="40dp"
-            android:background="@color/white"
-            android:text="@string/next"/>
-    </LinearLayout>
-</FrameLayout>
+    <Button
+        android:id="@+id/new_group_bt_next"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:text="@string/next"/>
+</LinearLayout>

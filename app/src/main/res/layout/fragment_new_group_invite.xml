@@ -1,37 +1,49 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:background="@color/flatui_emerald"
-             tools:context="io.gloop.demo.app.fragments.groups.InviteMembersFragment">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_gravity="center">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp">
 
         <EditText
-            android:id="@+id/new_group_et_search"
-            android:layout_width="match_parent"
+            android:id="@+id/email_text"
+            android:layout_width="0dp"
             android:layout_height="40dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="@string/enter_name_for_group"
-            android:background="@color/white"/>
-
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:ems="10"/>
 
         <Button
-            android:id="@+id/new_group_invite_bt_next"
-            android:layout_width="match_parent"
+            android:id="@+id/add_email_to_list_button"
+            android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@color/white"
-            android:text="@string/next"/>
+            android:background="@color/button_background"
+            android:text="@string/add"
+
+            android:textColor="@color/button_text_color"/>
 
     </LinearLayout>
-</FrameLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/invite_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"/>
+
+    <Button
+        android:id="@+id/new_group_invite_bt_next"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/button_background"
+        android:text="@string/next"
+        android:textColor="@color/button_text_color"/>
+
+</LinearLayout>

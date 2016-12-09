@@ -18,7 +18,8 @@ public class SplashActivity extends Activity {
     private static final String HOST_URL = "52.169.152.13:8080";
 
 //    private static final String API_KEY = "your-api-key-goes-here";
-    private static final String API_KEY = "b8ed4e84-4db5-4b63-b369-f75cbf51a065";
+//    private static final String API_KEY = "b8ed4e84-4db5-4b63-b369-f75cbf51a065";
+    private static final String API_KEY = "d739f749-590e-4803-bddf-00d378698afa";
 
     private static final boolean DEBUG = true;
 
