@@ -15,6 +15,7 @@ import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.gloop.Gloop;
 import io.gloop.demo.app.R;
 import io.gloop.demo.app.adapters.InviteAdapter;
 import io.gloop.demo.app.constants.Constants;
@@ -60,6 +61,7 @@ public class InviteMembersFragment extends Fragment {
                 for (String email : emails) {
                     members.add(new GloopUser(email));
                 }
+                members.add(Gloop.getOwner());
                 newGroup.setMembers(members);
                 newGroup.save();
 

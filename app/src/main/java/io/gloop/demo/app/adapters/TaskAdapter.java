@@ -61,20 +61,26 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ItemViewHolder
 
         holder.itemNameTextView.setText(item.getDescription());
 
-        final String firstLetter = item.getDescription().substring(0, 1).toUpperCase();
+        String firstLetter = "NULL";
+        if (item.getDescription() != null && item.getDescription().length() > 0) {
+            firstLetter = item.getDescription().substring(0, 1).toUpperCase();
+        }
+
+
         setItemSelected(holder, item.isDone(), firstLetter);
 
         if (item.getOwner() != null )
             if (!item.getOwner().isGroup())
                 holder.privateIcon.setVisibility(View.VISIBLE);
 
+        final String finalFirstLetter = firstLetter;
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 boolean itemDone = item.isDone();
                 item.setDone(!itemDone);
                 item.save();
-                setItemSelected(holder, !itemDone, firstLetter);
+                setItemSelected(holder, !itemDone, finalFirstLetter);
             }
         });
     }
