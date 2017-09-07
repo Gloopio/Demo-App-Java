@@ -69,9 +69,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ItemViewHolder
 
         setItemSelected(holder, item.isDone(), firstLetter);
 
-        if (item.getOwner() != null )
-            if (!item.getOwner().isGroup())
-                holder.privateIcon.setVisibility(View.VISIBLE);
+//        if (item.getOwner() != null )
+//            if (!item.getOwner().isGroup())
+//                holder.privateIcon.setVisibility(View.VISIBLE);
 
         final String finalFirstLetter = firstLetter;
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {

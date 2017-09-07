@@ -71,7 +71,7 @@ public class NewTaskFragment extends Fragment {
 
                     final GloopGroup group = Gloop.all(GloopGroup.class).where().equalsTo("name", selectedGroup).first();
                     if (group != null)
-                        newTask.setUser(group);
+                        newTask.setUser(group.getObjectId());
                 }
 
                 newTask.save();

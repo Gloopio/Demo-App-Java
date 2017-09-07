@@ -21,7 +21,6 @@ import io.gloop.demo.app.adapters.InviteAdapter;
 import io.gloop.demo.app.constants.Constants;
 import io.gloop.demo.app.fragments.GroupsFragment;
 import io.gloop.permissions.GloopGroup;
-import io.gloop.permissions.GloopUser;
 
 public class InviteMembersFragment extends Fragment {
 
@@ -55,14 +54,8 @@ public class InviteMembersFragment extends Fragment {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                // TODO fin solution without creating list of GloopUsers.
-                List<GloopUser> members = new ArrayList<>();
-                for (String email : emails) {
-                    members.add(new GloopUser(email));
-                }
-                members.add(Gloop.getOwner());
-                newGroup.setMembers(members);
+                emails.add(Gloop.getOwner().getUserId());
+                newGroup.setMembers(emails);
                 newGroup.save();
 
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();

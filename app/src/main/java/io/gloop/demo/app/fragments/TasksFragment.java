@@ -87,8 +87,8 @@ public class TasksFragment extends Fragment {
         fragmentManager.beginTransaction().replace(R.id.flContent, new NewTaskFragment()).commit();
     }
 
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+        @Override
+        public void onViewCreated(View view, Bundle savedInstanceState) {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.task_list);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
