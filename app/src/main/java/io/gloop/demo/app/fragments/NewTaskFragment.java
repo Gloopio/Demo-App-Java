@@ -39,10 +39,10 @@ public class NewTaskFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_new_task, container, false);
 
-        final EditText taskName = (EditText) view.findViewById(R.id.new_task_et_name);
-        final Button next = (Button) view.findViewById(R.id.new_task_bt_next);
-        final CheckBox shareCheckBox = (CheckBox) view.findViewById(R.id.new_task_share_checkBox);
-        final Spinner groupsSpinner = (Spinner) view.findViewById(R.id.new_task_group_spinner);
+        final EditText taskName = view.findViewById(R.id.new_task_et_name);
+        final Button next = view.findViewById(R.id.new_task_bt_next);
+        final CheckBox shareCheckBox = view.findViewById(R.id.new_task_share_checkBox);
+        final Spinner groupsSpinner = view.findViewById(R.id.new_task_group_spinner);
         final ArrayAdapter<String> adapter = new ArrayAdapter<>(this.getContext(), android.R.layout.simple_spinner_dropdown_item, getGroupNames());
         groupsSpinner.setAdapter(adapter);
 
@@ -67,11 +67,13 @@ public class NewTaskFragment extends Fragment {
 
                 // set group if selected
                 if (shareCheckBox.isChecked()) {
-                    final String selectedGroup = groupsSpinner.getSelectedItem().toString();
+                    if (groupsSpinner.getSelectedItem() != null) {
+                        final String selectedGroup = groupsSpinner.getSelectedItem().toString();
 
-                    final GloopGroup group = Gloop.all(GloopGroup.class).where().equalsTo("name", selectedGroup).first();
-                    if (group != null)
-                        newTask.setUser(group.getObjectId());
+                        final GloopGroup group = Gloop.all(GloopGroup.class).where().equalsTo("name", selectedGroup).first();
+                        if (group != null)
+                            newTask.setUser(group.getObjectId());
+                    }
                 }
 
                 newTask.save();

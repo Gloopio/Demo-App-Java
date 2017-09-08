@@ -27,11 +27,11 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ItemViewHolder
 
         ItemViewHolder(View view) {
             super(view);
-            this.relativeLayout = (RelativeLayout) view.findViewById(R.id.rl_item_list);
-            this.itemNameTextView = (TextView) view.findViewById(R.id.task_item_name);
-            this.imageView = (ImageView) view.findViewById(R.id.item_circular_view);
-            this.checkIcon = (ImageView) view.findViewById(R.id.check_icon);
-            this.privateIcon = (ImageView) view.findViewById(R.id.private_icon);
+            this.relativeLayout = view.findViewById(R.id.rl_item_list);
+            this.itemNameTextView = view.findViewById(R.id.task_item_name);
+            this.imageView = view.findViewById(R.id.item_circular_view);
+            this.checkIcon = view.findViewById(R.id.check_icon);
+            this.privateIcon = view.findViewById(R.id.private_icon);
             view.setClickable(true);
         }
     }
@@ -69,6 +69,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ItemViewHolder
 
         setItemSelected(holder, item.isDone(), firstLetter);
 
+        // tODO check if owner is a group
 //        if (item.getOwner() != null )
 //            if (!item.getOwner().isGroup())
 //                holder.privateIcon.setVisibility(View.VISIBLE);

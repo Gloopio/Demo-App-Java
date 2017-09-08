@@ -19,8 +19,8 @@ public class InviteAdapter extends RecyclerView.Adapter<InviteAdapter.ItemViewHo
 
         ItemViewHolder(View view) {
             super(view);
-            this.layout = (LinearLayout) view.findViewById(R.id.invite_layout);
-            this.textView = (TextView) view.findViewById(R.id.task_item_name);
+            this.layout = view.findViewById(R.id.invite_layout);
+            this.textView = view.findViewById(R.id.task_item_name);
             view.setClickable(true);
         }
     }

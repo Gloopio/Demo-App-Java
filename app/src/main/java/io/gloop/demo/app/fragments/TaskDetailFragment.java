@@ -33,7 +33,7 @@ public class TaskDetailFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_task_detail, container, false);
 
-        TextView nameTextView = (TextView) view.findViewById(R.id.task_detail_name);
+        TextView nameTextView = view.findViewById(R.id.task_detail_name);
         nameTextView.setText(task.getDescription());
 
         return view;

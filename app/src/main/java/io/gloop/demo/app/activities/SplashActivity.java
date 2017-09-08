@@ -7,18 +7,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 import io.gloop.Gloop;
 import io.gloop.demo.app.R;
 import io.gloop.demo.app.constants.Constants;
 
 public class SplashActivity extends Activity {
-
-    // Set url of the server.
-    private static final String HOST_URL = "52.169.152.13:8080";
-//    private static final String HOST_URL = "192.168.0.16:8080";
-    private static final String API_KEY = "1edcfd95-6443-4d16-9fd2-091da5fd602d";
-
-    private static final boolean DEBUG = true;
 
     /**
      * Duration of wait
@@ -31,6 +26,7 @@ public class SplashActivity extends Activity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_splashscreen);
     }
 
@@ -38,10 +34,10 @@ public class SplashActivity extends Activity {
         super.onPostCreate(savedInstanceState);
 
         // setup Gloop
-        Gloop.initialize(this, API_KEY, HOST_URL);
+        Gloop.initialize(this);
 
         // setup Gloop with debugging enabled
-        // new Gloop(this, "your-api-key-goes-here", HOST_URL, DEBUG);
+        // new Gloop(this, true);
 
         /* New Handler to start the next Activity
          * and close this SplashActivity-Screen after some seconds.*/

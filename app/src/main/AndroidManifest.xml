@@ -30,6 +30,13 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="d0f1e70e1d5744ad206e0eff1cd3c02cb3a2e4ab" />
     </application>
+
+    <meta-data
+        android:name="io.gloop.ApiKey"
+        android:value="1edcfd95-6443-4d16-9fd2-091da5fd602d"/>
 
 </manifest>

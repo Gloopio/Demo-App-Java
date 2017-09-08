@@ -42,10 +42,10 @@ public class TasksFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_task, container, false);
 
-        mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.activity_main_swipe_refresh_layout);
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.task_list);
+        mSwipeRefreshLayout = view.findViewById(R.id.activity_main_swipe_refresh_layout);
+        mRecyclerView = view.findViewById(R.id.task_list);
 
-        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        FloatingActionButton fab = view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,9 +87,9 @@ public class TasksFragment extends Fragment {
         fragmentManager.beginTransaction().replace(R.id.flContent, new NewTaskFragment()).commit();
     }
 
-        @Override
-        public void onViewCreated(View view, Bundle savedInstanceState) {
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.task_list);
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        mRecyclerView = view.findViewById(R.id.task_list);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
@@ -119,9 +119,6 @@ public class TasksFragment extends Fragment {
             public void onRefresh() {
                 Gloop.sync();
 
-//                tasks.reload();
-// TODO test if reload is enough.
-//                tasks = Gloop.all(Task.class);
                 mAdapter = new TaskAdapter(tasks);
                 mRecyclerView.setAdapter(mAdapter);
 
