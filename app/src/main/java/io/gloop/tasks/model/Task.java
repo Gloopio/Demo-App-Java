@@ -1,4 +1,4 @@
-package io.gloop.demo.app.model;
+package io.gloop.tasks.model;
 
 import io.gloop.GloopObject;
 

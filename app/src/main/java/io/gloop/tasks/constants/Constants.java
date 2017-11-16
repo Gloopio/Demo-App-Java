@@ -1,4 +1,4 @@
-package io.gloop.demo.app.constants;
+package io.gloop.tasks.constants;
 
 /**
  * Created by Alex Untertrifaller on 25.10.16.

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="io.gloop.demo.app">
+          package="io.gloop.tasks">
 
     <!-- Give internet access to gloop f -->
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.SplashActivity"
+            android:name="io.gloop.tasks.activities.SplashActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -21,12 +21,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.LoginActivity"
+            android:name="io.gloop.tasks.activities.LoginActivity"
             android:label="@string/text_login_activity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".activities.MainActivity"
+            android:name="io.gloop.tasks.activities.MainActivity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
@@ -37,6 +37,6 @@
 
     <meta-data
         android:name="io.gloop.ApiKey"
-        android:value="1edcfd95-6443-4d16-9fd2-091da5fd602d"/>
+        android:value="2296eac9-67d8-4b84-9e7c-e6bd3777e346"/>
 
 </manifest>

@@ -1,4 +1,4 @@
-package io.gloop.demo.app.fragments.groups;
+package io.gloop.tasks.fragments.groups;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -16,10 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.gloop.Gloop;
-import io.gloop.demo.app.R;
-import io.gloop.demo.app.adapters.InviteAdapter;
-import io.gloop.demo.app.constants.Constants;
-import io.gloop.demo.app.fragments.GroupsFragment;
+import io.gloop.tasks.R;
+import io.gloop.tasks.adapters.InviteAdapter;
+import io.gloop.tasks.constants.Constants;
+import io.gloop.tasks.fragments.GroupsFragment;
 import io.gloop.permissions.GloopGroup;
 
 public class InviteMembersFragment extends Fragment {
@@ -50,7 +50,7 @@ public class InviteMembersFragment extends Fragment {
 
         final InviteAdapter mAdapter = new InviteAdapter(emails);
 
-        Button nextButton = (Button) view.findViewById(R.id.new_group_invite_bt_next);
+        Button nextButton = view.findViewById(R.id.new_group_invite_bt_next);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,9 +64,9 @@ public class InviteMembersFragment extends Fragment {
             }
         });
 
-        final EditText emailEditText = (EditText) view.findViewById(R.id.email_text);
+        final EditText emailEditText = view.findViewById(R.id.email_text);
 
-        Button addEmail = (Button) view.findViewById(R.id.add_email_to_list_button);
+        Button addEmail = view.findViewById(R.id.add_email_to_list_button);
         addEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,7 +79,7 @@ public class InviteMembersFragment extends Fragment {
             }
         });
 
-        RecyclerView mRecyclerView = (RecyclerView) view.findViewById(R.id.invite_list);
+        RecyclerView mRecyclerView = view.findViewById(R.id.invite_list);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 

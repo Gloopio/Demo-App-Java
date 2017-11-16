@@ -1,4 +1,4 @@
-package io.gloop.demo.app.adapters;
+package io.gloop.tasks.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,8 +13,8 @@ import com.amulyakhare.textdrawable.util.ColorGenerator;
 
 import io.gloop.GloopList;
 import io.gloop.GloopOnChangeListener;
-import io.gloop.demo.app.R;
 import io.gloop.permissions.GloopGroup;
+import io.gloop.tasks.R;
 
 public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.ItemViewHolder> {
 

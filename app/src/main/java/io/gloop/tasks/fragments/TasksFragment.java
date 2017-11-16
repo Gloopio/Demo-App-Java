@@ -1,4 +1,4 @@
-package io.gloop.demo.app.fragments;
+package io.gloop.tasks.fragments;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -20,10 +20,10 @@ import com.github.brnunes.swipeablerecyclerview.SwipeableRecyclerViewTouchListen
 
 import io.gloop.Gloop;
 import io.gloop.GloopList;
-import io.gloop.demo.app.R;
-import io.gloop.demo.app.adapters.TaskAdapter;
-import io.gloop.demo.app.constants.Constants;
-import io.gloop.demo.app.model.Task;
+import io.gloop.tasks.R;
+import io.gloop.tasks.adapters.TaskAdapter;
+import io.gloop.tasks.constants.Constants;
+import io.gloop.tasks.model.Task;
 
 public class TasksFragment extends Fragment {
 

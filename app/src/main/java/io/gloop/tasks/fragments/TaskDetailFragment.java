@@ -1,4 +1,4 @@
-package io.gloop.demo.app.fragments;
+package io.gloop.tasks.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import io.gloop.demo.app.R;
-import io.gloop.demo.app.constants.Constants;
-import io.gloop.demo.app.model.Task;
+import io.gloop.tasks.R;
+import io.gloop.tasks.constants.Constants;
+import io.gloop.tasks.model.Task;
 
 public class TaskDetailFragment extends Fragment {
 

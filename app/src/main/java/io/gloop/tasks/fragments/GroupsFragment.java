@@ -1,4 +1,4 @@
-package io.gloop.demo.app.fragments;
+package io.gloop.tasks.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,9 +14,9 @@ import android.view.ViewGroup;
 
 import io.gloop.Gloop;
 import io.gloop.GloopList;
-import io.gloop.demo.app.R;
-import io.gloop.demo.app.adapters.GroupAdapter;
-import io.gloop.demo.app.fragments.groups.NewGroupFragment;
+import io.gloop.tasks.R;
+import io.gloop.tasks.adapters.GroupAdapter;
+import io.gloop.tasks.fragments.groups.NewGroupFragment;
 import io.gloop.permissions.GloopGroup;
 
 public class GroupsFragment extends Fragment {

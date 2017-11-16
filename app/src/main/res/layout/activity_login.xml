@@ -8,7 +8,7 @@
               android:orientation="vertical"
               android:paddingLeft="@dimen/activity_horizontal_margin"
               android:paddingRight="@dimen/activity_horizontal_margin"
-              tools:context="io.gloop.demo.app.activities.LoginActivity">
+              tools:context="io.gloop.tasks.activities.LoginActivity">
 
     <!--<ImageView-->
     <!--android:id="@+id/imageView2"-->

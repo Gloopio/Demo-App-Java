@@ -1,4 +1,4 @@
-package io.gloop.demo.app.fragments;
+package io.gloop.tasks.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.gloop.Gloop;
-import io.gloop.demo.app.R;
-import io.gloop.demo.app.model.Task;
+import io.gloop.tasks.R;
+import io.gloop.tasks.model.Task;
 import io.gloop.permissions.GloopGroup;
 
 public class NewTaskFragment extends Fragment {

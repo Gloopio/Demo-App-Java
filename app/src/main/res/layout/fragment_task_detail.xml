@@ -2,7 +2,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context="io.gloop.demo.app.fragments.TaskDetailFragment">
+             tools:context="io.gloop.tasks.fragments.TaskDetailFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

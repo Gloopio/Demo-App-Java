@@ -1,4 +1,4 @@
-package io.gloop.demo.app.activities;
+package io.gloop.tasks.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,8 +10,8 @@ import android.support.annotation.Nullable;
 import com.crashlytics.android.Crashlytics;
 import io.fabric.sdk.android.Fabric;
 import io.gloop.Gloop;
-import io.gloop.demo.app.R;
-import io.gloop.demo.app.constants.Constants;
+import io.gloop.tasks.R;
+import io.gloop.tasks.constants.Constants;
 
 public class SplashActivity extends Activity {
 

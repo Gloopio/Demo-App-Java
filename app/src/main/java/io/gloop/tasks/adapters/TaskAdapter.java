@@ -1,4 +1,4 @@
-package io.gloop.demo.app.adapters;
+package io.gloop.tasks.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,8 +13,8 @@ import com.amulyakhare.textdrawable.util.ColorGenerator;
 
 import io.gloop.GloopList;
 import io.gloop.GloopOnChangeListener;
-import io.gloop.demo.app.R;
-import io.gloop.demo.app.model.Task;
+import io.gloop.tasks.R;
+import io.gloop.tasks.model.Task;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ItemViewHolder> {
 

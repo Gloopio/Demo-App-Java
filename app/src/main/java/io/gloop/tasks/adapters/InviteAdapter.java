@@ -1,4 +1,4 @@
-package io.gloop.demo.app.adapters;
+package io.gloop.tasks.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import io.gloop.demo.app.R;
+import io.gloop.tasks.R;
 
 public class InviteAdapter extends RecyclerView.Adapter<InviteAdapter.ItemViewHolder> {
 

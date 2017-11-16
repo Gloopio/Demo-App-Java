@@ -25,9 +25,9 @@ repositories {
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '25.0.2'
+    buildToolsVersion '26.0.2'
     defaultConfig {
-        applicationId "io.gloop.demo.app"
+        applicationId "io.gloop.tasks"
         minSdkVersion 17
         targetSdkVersion 26
         versionCode 1

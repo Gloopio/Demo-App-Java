@@ -1,4 +1,4 @@
-package io.gloop.demo.app.activities;
+package io.gloop.tasks.activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -18,8 +18,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import io.gloop.Gloop;
-import io.gloop.demo.app.R;
-import io.gloop.demo.app.constants.Constants;
+import io.gloop.tasks.R;
+import io.gloop.tasks.constants.Constants;
 
 /**
  * A login screen that offers login via email/password.
@@ -38,8 +38,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         // Set up the login form.
-        mEmailView = (EditText) findViewById(R.id.email);
-        mPasswordView = (EditText) findViewById(R.id.password);
+        mEmailView = findViewById(R.id.email);
+        mPasswordView = findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Button signInButton = (Button) findViewById(R.id.sign_in_button);
+        Button signInButton = findViewById(R.id.sign_in_button);
         signInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Button registerButton = (Button) findViewById(R.id.register_button);
+        Button registerButton = findViewById(R.id.register_button);
         registerButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {

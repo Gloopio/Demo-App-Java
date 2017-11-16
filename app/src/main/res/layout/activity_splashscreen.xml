@@ -5,7 +5,7 @@
               android:layout_height="fill_parent"
               android:background="@color/background_splash_screen"
               android:orientation="vertical"
-              tools:context="io.gloop.demo.app.activities.SplashActivity">
+              tools:context="io.gloop.tasks.activities.SplashActivity">
 
     <ImageView
         android:id="@+id/splashscreen"
